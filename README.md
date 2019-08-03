@@ -1,3 +1,1 @@
-# medium
-# medium
-# medium
+# medium article, just a test
