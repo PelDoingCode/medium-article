@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Medium-post</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree:400,700i|Lato" rel="stylesheet">
+</head>
+<body>
+
+<div class="wrap-text">
+
+  <div id="banner">
+      <h1>How to have fun while reading a Medium post</h1>
+      <h2><em>This is uselss of course</em></h2>
+  </div>
+  <div class="main-text">
+      <h2>Some Title</h2>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptas, quod ex atque, blanditiis veniam harum, quia omnis eius iure unde ullam rerum esse. Nulla assumenda atque temporibus, ab nam.</p>
+      <br>
+      <h2>Another Title</h2>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptas, quod ex atque, blanditiis veniam harum, quia omnis eius iure unde ullam rerum esse. Nulla assumenda atque temporibus, ab nam.</p>
+      <br>
+      <a href="#" id="green-highlight"><em>This is how you really do it</em>
+      <br>
+      </a>
+      <br>
+      <h2>A Final Title</h2>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptas, quod ex atque, blanditiis veniam harum, quia omnis eius iure unde ullam rerum esse. Nulla assumenda atque temporibus, ab nam.</p>
+   </div>
+
+</div>
+
+
+
+
+
+  <!-- here we place the particules js at the end of the medium post -->
+
+  <div class="bouton">
+    <a href="#" class="text">JOIN US !    </a>
+  </div>
+  <!-- count particles -->
+  <div class="count-particles">
+    <span class="js-count-particles">--</span> particles
+  </div>
+
+  <!-- particles.js container -->
+  <div id="particles-js"></div>
+
+  <!-- scripts -->
+  <script src="../particles.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- stats.js -->
+  <script src="js/lib/stats.js"></script>
+  <script>
+    var count_particles, stats, update;
+    stats = new Stats;
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function() {
+      stats.begin();
+      stats.end();
+      if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+      }
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  </script>
+
+</body>
+</html>
